@@ -20,4 +20,7 @@ pipeline {
     }
 
   }
+  environment {
+    chandu = '1'
+  }
 }
