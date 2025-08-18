@@ -1,23 +1,29 @@
 pipeline {
-  agent any
-  stages {
-    stage('Build') {
-      steps {
-        echo 'Building project...'
-      }
-    }
+    agent any
 
-    stage('Test') {
-      steps {
-        echo ' Testing project...'
-      }
-    }
+    stages {
+        stage('Checkout') {
+            steps {
+                git 'https://github.com/Ayyappa1Balachandra/gptc5205repo.git'
+            }
+        }
 
-    stage('Deploy') {
-      steps {
-        echo 'Deploying project Buddy wait a min....'
-      }
-    }
+        stage('Build') {
+            steps {
+                echo 'Building project...'
+            }
+        }
 
-  }
+        stage('Test') {
+            steps {
+                echo 'Running tests...'
+            }
+        }
+
+        stage('Deploy') {
+            steps {
+                echo 'Deploying project...'
+            }
+        }
+    }
 }
